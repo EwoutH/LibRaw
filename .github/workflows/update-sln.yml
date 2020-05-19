@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
   qmake:
     name: QMake
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
     - uses: jurplel/install-qt-action@v2
