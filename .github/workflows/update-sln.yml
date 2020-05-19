@@ -1,0 +1,14 @@
+name: "Create VS solution file"
+on: [push, pull_request]
+
+jobs:
+  qmake:
+    name: QMake
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: qmake -recursive -tp vc LibRaw.pro
+    - uses: actions/upload-artifact@v2
+      with:
+       name: VS solution file
+       path: LibRaw.sln
